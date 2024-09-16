@@ -48,11 +48,13 @@ async def delete_files():
 # FastAPI Endpoint to List Files
 @app.get("/files/")
 async def list_files():
-    files = os.listdir(UPLOAD_DIR)
-    if files is not None:
+    try:
+        files = os.listdir(UPLOAD_DIR)
         return {"files": [{"filename": file} for file in files]}
-    else:
+    except FileNotFoundError:
         return {"message": "No files found!"}
+    except Exception as e:
+        return {"exception": "{e}"}
 
 # Vercel expects this format for ASGI apps
 app = app
