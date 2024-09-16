@@ -49,9 +49,9 @@ async def delete_files():
 @app.get("/files/")
 async def list_files():
     files = os.listdir(UPLOAD_DIR)
-    if files is not None
+    if files is not None:
         return {"files": [{"filename": file} for file in files]}
-    else
+    else:
         return {"message": "No files found!"}
 
 # Vercel expects this format for ASGI apps
