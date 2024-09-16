@@ -45,5 +45,11 @@ async def delete_files():
         shutil.rmtree(UPLOAD_DIR)
     return {"message": "All files deleted successfully!"}
 
+# FastAPI Endpoint to List Files
+@app.get("/files/")
+async def list_files():
+    files = os.listdir(UPLOAD_DIR)
+    return {"files": [{"filename": file} for file in files]}
+
 # Vercel expects this format for ASGI apps
 app = app
