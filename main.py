@@ -5,7 +5,7 @@ import os
 import shutil
 
 local_url = "http://localhost:3000"
-vercel_url = "https://web-gen-frontend-nipun-katariyas-projects.vercel.app"
+vercel_url = "https://web-gen-frontend-seven.vercel.app"
 
 app = FastAPI()
 
