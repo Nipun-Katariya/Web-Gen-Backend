@@ -4,6 +4,9 @@ import zipfile
 import os
 import shutil
 
+local_url = "http://localhost:3000"
+vercel_url = "https://web-gen-frontend-nipun-katariyas-projects.vercel.app"
+
 app = FastAPI()
 
 UPLOAD_DIR = "uploaded_files"  # or any suitable directory
@@ -16,7 +19,7 @@ def read_root():
 # Allow CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "https://web-gen-frontend-nipun-katariyas-projects.vercel.app"],  # Your frontend origin
+    allow_origins=[vercel_url],  # Your frontend origin
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
