@@ -9,7 +9,7 @@ vercel_url = "https://web-gen-frontend-seven.vercel.app"
 
 app = FastAPI()
 
-UPLOAD_DIR = "uploaded_files"  # or any suitable directory
+UPLOAD_DIR = "/tmp/uploaded_files"  # or any suitable directory
 
 # Root URL
 @app.get("/")
@@ -43,7 +43,6 @@ async def upload_flask_app(file: UploadFile = File(...)):
 async def delete_files():
     if os.path.exists(UPLOAD_DIR):
         shutil.rmtree(UPLOAD_DIR)
-        os.makedirs(UPLOAD_DIR, exist_ok=True)  # Recreate the directory after deletion
     return {"message": "All files deleted successfully!"}
 
 # Vercel expects this format for ASGI apps
