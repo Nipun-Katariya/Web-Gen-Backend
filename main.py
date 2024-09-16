@@ -54,7 +54,7 @@ async def list_files():
     except FileNotFoundError:
         return {"message": "No files found!"}
     except Exception as e:
-        return {"exception": "{e}"}
+        return {"exception": f"{e}"}
 
 # Vercel expects this format for ASGI apps
 app = app
