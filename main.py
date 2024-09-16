@@ -8,6 +8,11 @@ app = FastAPI()
 
 UPLOAD_DIR = "uploaded_files"  # or any suitable directory
 
+# Root URL
+@app.get("/")
+def read_root():
+    return {"message": "FastAPI backend is running!"}
+
 # Allow CORS
 app.add_middleware(
     CORSMiddleware,
