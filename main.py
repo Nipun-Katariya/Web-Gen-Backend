@@ -19,7 +19,7 @@ def read_root():
 # Allow CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[vercel_url],  # Your frontend origin
+    allow_origins=[local_url, vercel_url],  # Your frontend origin
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
