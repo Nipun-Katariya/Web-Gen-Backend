@@ -16,7 +16,7 @@ def read_root():
 # Allow CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Your frontend origin
+    allow_origins=["http://localhost:3000", "https://web-gen-frontend-nipun-katariyas-projects.vercel.app"],  # Your frontend origin
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
